@@ -36,14 +36,14 @@ function watching() {
 }
 
 function cleanDist() {
-  return src("dist").pipe(clean());
+  return src("build").pipe(clean());
 }
 
 function building() {
   return src(
     ["src/css/style.min.css", "src/js/index.min.js", "src/**/*.html"],
     { base: "src" }
-  ).pipe(dest("dist"));
+  ).pipe(dest("build"));
 }
 
 exports.styles = styles;
